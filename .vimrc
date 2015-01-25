@@ -484,7 +484,9 @@ set hlsearch
 set laststatus=2
 
 " Prizpusobeni informaci zobrazenych ve stavove liste okna.
-set statusline=[%n/%{bufnr(\"$\")}]\ %<%F\ \ %h%m%=[%W%Y%R%{\",\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"\"}%{\",\".(&fileformat)}]\ %k\ %-14.(%l,%c%V%)%P\ (%LL,\ %{getfsize(expand(\"%:p\"))==\"-1\"?\"-\":getfsize(expand(\"%:p\"))}C)
+set statusline=[%n/%{bufnr(\"$\")}]\ %<%F\ \ %h%m%=[%W%Y%R%{\",\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"\"}%{\",\".(&fileformat)}]\ %k\ %-14.(%l,%c%V%)%P\ (%LL,\ %{getfsize(expand(\"%:p\"))==\"-1\"?\"-\":getfsize(expand(\"%:p\"))}C)%{fugitive#statusline()}
+
+" set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Pouzivat modelines (retezce informujici VIM, jak se ma nastavit).
 set modeline
