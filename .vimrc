@@ -1,7 +1,4 @@
 " git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-" test II.
-" test III.
-" test IV.
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -37,12 +34,14 @@ Bundle 'mattn/emmet-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mbbill/undotree'
 Plugin 'majutsushi/tagbar'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'Shougo/neosnippet.vim'
-Plugin 'Shougo/neosnippet-snippets'
+"Plugin 'Shougo/neocomplete.vim'
+"Plugin 'Shougo/neosnippet.vim'
+"Plugin 'Shougo/neosnippet-snippets'
 Plugin 'Shougo/vimshell.vim'
-Plugin 'honza/vim-snippets'
+"Plugin 'honza/vim-snippets'
+"Plugin 'Shougo/neocomplcache'
 " Plugin 'kien/ctrlp.vim'
+Plugin 'msanders/snipmate'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'bling/vim-bufferline'
@@ -79,12 +78,6 @@ Plugin 'tomasr/molokai'
 " Plugin 'michalbachowski/vim-wombat256mod'
 " Plugin '29decibel/codeschool-vim-theme'
 
-" Marks
-nnoremap <silent> <leader>m :marks<CR>
-
-
-
-
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -103,6 +96,8 @@ filetype plugin indent on    " required
 
 let mapleader = ","
 
+" Marks
+nnoremap <silent> <leader>m :marks<CR>
 
 " =================== Startify
 let g:startify_session_dir = "~/.vim/sessions"
@@ -248,7 +243,6 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php setlocal omnifunc=phpcomplete#CompleteTags
 
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
@@ -261,6 +255,55 @@ endif
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+" ----- Neocomplete.vim
+" http://vim.wikia.com/wiki/Improve_completion_popup_menu
+
+" https://github.com/Shougo/neocomplete.vim
+" http://pastebin.com/1Tw93UpM
+" https://github.com/Shougo/neosnippet.vim/blob/master/doc/neosnippet.txt
+
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php setlocal omnifunc=phpcomplete#CompleteTags
+
 
 " --------------- neosnippet.vima
 " Plugin key-mappings.
@@ -302,16 +345,6 @@ let mapleader = ","
 " http://dougblack.io/words/a-good-vimrc.html#colors
 " http://www.snip2code.com/Snippet/16759/vim-configuration-file
 
-" syntax enable
-" set background=dark
-" set background=light
-" colorscheme solarized
-" colorscheme wintersday
-" colorscheme desert
-" colorscheme mustang
-" colorscheme monokai
-" colorscheme railscasts
-" colorscheme badwolf
 colorscheme molokai
 
 let g:molokai_original = 1
@@ -319,8 +352,6 @@ let g:molokai_original = 1
 
 " colorscheme codeschool
 " colorscheme wombat256mod
-
-
 
 syntax enable
 " set background=dark
@@ -416,14 +447,14 @@ set cursorline
 " enable folding
 set foldenable
 
+" Graficke zvyrazneni foldu
+"set foldcolumn=5
+
 " leader is comma
 let mapleader=","
 
 " jk is escape
 inoremap jk <esc>
-
-"vpravo dole zobrazuje pozici kurzoru
-set ruler
 
 "vlevo dole zobrazuje aktuální režim
 set showmode
@@ -440,10 +471,8 @@ syntax on
 set lines=58
 set columns=160
 
-set ruler
-
 " Definice klavesove zkratky pro soucasne zobrazeny obsahu vsech bufferu.
-" map <F5> :vertical ball<ENTER>
+map <F5> :vertical ball<ENTER>
 
 " Pri psani skryt kurzor mysi.
 " set mousehide
@@ -469,7 +498,7 @@ set smartcase
 set linebreak
 
 " Text zalamovat na 80. znaku.
-set textwidth=100
+set textwidth=150
 
 " Pouzivat automaticke odsazovani psaneho kodu.
 set autoindent
@@ -499,12 +528,14 @@ nmap <S-Tab> <C-w>w
 " apod.
 set pastetoggle=<F12>
 
+" Vyska radku.
+set linespace=1
+
 " Prepinani otevrenych souboru
 " Trik spočívá v tom, že na klávesy Alt plus 1 až0 máte namapovány příkazy pro přechod do bufferů s odpovídajícími čísly.
 " Pro přesun na následující/předcházející buffer v pořadí se mapuje navíc dvojice Ctrl+Tab/Shift+Ctrl+Tab.
 " Díky přidaným mapováním imap zkratky fungují i v insert módu.
 " http://www.root.cz/clanky/vim-na-plny-vykon-vimrc/
-
 map <A-1> :b1<CR>
 map <A-2> :b2<CR>
 map <A-3> :b3<CR>
@@ -583,15 +614,11 @@ if has("autocmd")
 endif
 syntax on
 
-" Vyska radku.
-:set linespace=1
 
 
 
 imap <Leader>br border: 1px solid red;
 
-" Graficke zvyrazneni foldu
-":set foldcolumn=5
 
 "let g:project_use_nerdtree = 1
 "set rtp+=~/.vim/bundle/vim-project/
