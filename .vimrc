@@ -34,8 +34,8 @@ Bundle 'mattn/emmet-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mbbill/undotree'
 Plugin 'majutsushi/tagbar'
-"Plugin 'Shougo/neocomplete'
-Plugin 'Shougo/neocomplcache'
+Plugin 'Shougo/neocomplete'
+" Plugin 'Shougo/neocomplcache'
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'Shougo/vimshell.vim'
@@ -418,8 +418,8 @@ syntax on
 " set guifont=-misc-fixed-medium-r-normal--11-*-iso8859-2
 
 " velikost okna
-set lines=58
-set columns=160
+"set lines=58
+"set columns=160
 
 " Definice klavesove zkratky pro soucasne zobrazeny obsahu vsech bufferu.
 map <F5> :vertical ball<ENTER>
@@ -581,7 +581,7 @@ imap <Leader>br border: 1px solid red;
 "Project 'vimrc'
 "File '~/.vimrc' , 'vimrc'
 
-"Project 'zus'   
+"Project 'zus'
 "File 'zus/sites/all/themes/woody/sass'  , 'sass'
 "File 'zus/sites/all/themes/woody/sass/main.scss'  , 'main.scss'
 "File 'zus/sites/all/themes/woody/sass/_drupal.scss'  , 'drupal'
