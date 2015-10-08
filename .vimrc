@@ -1,7 +1,4 @@
 " git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-" test II.
-" test III.
-" test IV.
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -510,7 +507,7 @@ set tabstop=2
 set cursorline
 
 " enable folding
-"set foldenable
+set foldenable
 
 " leader is comma
 let mapleader=","
@@ -687,7 +684,7 @@ syntax on
 imap <Leader>br border: 1px solid red;
 
 " Graficke zvyrazneni foldu
-":set foldcolumn=5
+:set foldcolumn=5
 
 "let g:project_use_nerdtree = 1
 "set rtp+=~/.vim/bundle/vim-project/
