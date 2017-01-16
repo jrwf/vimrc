@@ -1,5 +1,10 @@
 " git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-" test test
+"
+" , + b  /nerdtree
+" , + u  /historie
+" , + tt /tagbar
+" , + bb /buffer
+"
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -47,6 +52,11 @@ Plugin 'widox/vim-buffer-explorer-plugin'
 Plugin 'fishman/ctags'
 Plugin 'myusuf3/numbers.vim'
 Plugin 'mvolkmann/vim-tag-comment'
+
+" Plugin pro symfony 2
+Plugin 'docteurklein/vim-symfony'
+Plugin 'evidens/vim-twig'
+
 "tc :ElementComment
 "tu :ElementUncomment
 "tC :TagComment
@@ -117,21 +127,9 @@ Plugin 'othree/html5.vim'
 Plugin 'kshenoy/vim-signature'
 "Plugin 'amiorin/vim-project'
 "
-"Plugin 'jrwf/vim-woody'
+Plugin 'jrwf/vim-woody'
 
 Plugin 'tomasr/molokai'
-" Plugin 'altercation/vim-colors-solarized'
-" Plugin 'creationix/vimrc'
-" Plugin 'nanotech/jellybeans'
-" Plugin 'vim-scripts/wintersday'
-" Plugin 'fugalh/desert'
-" Plugin 'croaker/mustang-vim'
-" Plugin 'sickill/vim-monokai'
-" Plugin 'jpo/vim-railscasts-theme'
-" Plugin 'sjl/badwolf'
-" Plugin 'chriskempson/base16-vim'
-" Plugin 'michalbachowski/vim-wombat256mod'
-" Plugin '29decibel/codeschool-vim-theme'
 
 " Marks
 nnoremap <silent> <leader>m :marks<CR>
@@ -171,15 +169,6 @@ let g:startify_session_persistence = 1
 let g:startify_session_delete_buffers = 1
 let g:startify_disable_at_vimenter = 1
 
-
-"let g:startify_enable_special         = 0
-"let g:startify_files_number           = 8
-"let g:startify_relative_path          = 1
-"let g:startify_change_to_dir          = 1
-"let g:startify_session_autoload       = 1
-"let g:startify_session_persistence    = 1
-"let g:startify_session_delete_buffers = 1
-
 hi StartifyBracket ctermfg=240
 hi StartifyFile    ctermfg=147
 hi StartifyFooter  ctermfg=240
@@ -188,10 +177,6 @@ hi StartifyNumber  ctermfg=215
 hi StartifyPath    ctermfg=245
 hi StartifySlash   ctermfg=240
 hi StartifySpecial ctermfg=240
-"let g:startify_list_order = ['files', 'dir', 'bookmarks', 'sessions']
-
-"autocmd User Startified AirlineRefresh
-"g:startify_bookmarks
 
 " :SLoad    load a session
 " :SSave    save a session
@@ -644,38 +629,33 @@ nnoremap <silent> <leader>b :BufExplorer<CR>
 "
 "CTAGS
 "
-"let Tlist_Ctags_Cmd = "/usr/bin/ctags"
-"let Tlist_WinWidth = 20
+let Tlist_Ctags_Cmd = "/usr/bin/ctags"
+let Tlist_WinWidth = 20
 
 "
 " add drupal tags
 "
-"set tags+=~/.vim/bundle/vimrc/bundle/vim-plugin-for-drupal/tagfiles/drupal7.tags
+set tags+=~/.vim/bundle/vimrc/bundle/vim-plugin-for-drupal/tagfiles/drupal7.tags
 
 " Enable snipMate compatibility feature.
-let g:neosnippet#enable_snipmate_compatibility = 1
-
-" Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+"let g:neosnippet#enable_snipmate_compatibility = 1
+"let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-woody'
-" let g:neosnippet#snippets_directory='~/.vim/bundle/vimrc/bundle/vim-plugin-for-drupal/'
-" let g:neosnippet#snippets_directory='~/.vim/bundle/vimrc/bundle/vim-plugin-for-drupal/snipmate/drupal'
-let g:mta_set_default_matchtag_color = 1" let g:neosnippet#snippets_directory='~/.vim/bundle/vimrc/bundle/vim-plugin-for-drupal/snipmate/drupal6'
-" let g:neosnippet#snippets_directory='~/.vim/bundle/vimrc/bundle/vim-plugin-for-drupal/snipmate/drupal7'
-"
-if has("autocmd")
-  " Drupal *.module and *.install files.
-  augroup module
-    autocmd BufRead,BufNewFile *.module set filetype=php
-    autocmd BufRead,BufNewFile *.install set filetype=php
-    autocmd BufRead,BufNewFile *.test set filetype=php
-    autocmd BufRead,BufNewFile *.inc set filetype=php
-    autocmd BufRead,BufNewFile *.profile set filetype=php
-    autocmd BufRead,BufNewFile *.view set filetype=php
-    autocmd BufRead,BufNewFile *.info set filetype=php
-  augroup END
-endif
-syntax on
+"let g:neosnippet#snippets_directory='~/.vim/bundle/vim-bootstrap3-snippets'
+"let g:mta_set_default_matchtag_color = 1" let g:neosnippet#snippets_directory='~/.vim/bundle/vimrc/bundle/vim-plugin-for-drupal/snipmate/drupal6'
+
+"if has("autocmd")
+  "augroup module
+    "autocmd BufRead,BufNewFile *.module set filetype=php
+    "autocmd BufRead,BufNewFile *.install set filetype=php
+    "autocmd BufRead,BufNewFile *.test set filetype=php
+    "autocmd BufRead,BufNewFile *.inc set filetype=php
+    "autocmd BufRead,BufNewFile *.profile set filetype=php
+    "autocmd BufRead,BufNewFile *.view set filetype=php
+    "autocmd BufRead,BufNewFile *.info set filetype=php
+  "augroup END
+"endif
+"syntax on
 
 " Vyska radku.
 :set linespace=1
@@ -685,7 +665,7 @@ syntax on
 imap <Leader>br border: 1px solid red;
 
 " Graficke zvyrazneni foldu
-:set foldcolumn=5
+":set foldcolumn=5
 
 "let g:project_use_nerdtree = 1
 "set rtp+=~/.vim/bundle/vim-project/
@@ -704,37 +684,29 @@ imap <Leader>br border: 1px solid red;
 "File 'zus/sites/all/themes/woody/sass/_drupal.scss'  , 'drupal'
 
 " zvyraznuje parovou zavorku
-:set mps+=<:>
-:help matchpairs
+":set mps+=<:>
+":help matchpairs
 
-let g:mta_use_matchparen_group = 1
-let g:mta_filetypes = {
-    \ 'html' : 1,
-    \ 'xhtml' : 1,
-    \ 'xml' : 1,
-    \ 'jinja' : 1,
-    \ 'php' : 1,
-    \}
-let g:mta_use_matchparen_group = 1
-let g:mta_set_default_matchtag_color = 1
-nnoremap <leader>% :MtaJumpToOtherTag<cr>
+"let g:mta_use_matchparen_group = 1
+"let g:mta_filetypes = {
+    "\ 'html' : 1,
+    "\ 'xhtml' : 1,
+    "\ 'xml' : 1,
+    "\ 'jinja' : 1,
+    "\ 'php' : 1,
+    "\}
+"let g:mta_use_matchparen_group = 1
+"let g:mta_set_default_matchtag_color = 1
+"nnoremap <leader>% :MtaJumpToOtherTag<cr>
 
 
 " CtrlP
 "
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
-
-"let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-"let g:ctrlp_custom_ignore = {
-  "\ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  "\ 'file': '\v\.(exe|so|dll)$',
-  "\ 'link': 'some_bad_symbolic_links',
-  "\ }
-"let g:ctrlp_user_command = 'find %s -type f'
+"let g:ctrlp_map = '<c-p>'
+"let g:ctrlp_cmd = 'CtrlP'
+"let g:ctrlp_working_path_mode = 'ra'
+"set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+"set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
 
 
@@ -778,24 +750,17 @@ nnoremap <leader>] :call JumpToCSS()<CR>zz
 
 
 
-" let g:indent_guides_auto_colors = 1
-" let g:IndentGuidesEnable = 1
-" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=silver   ctermbg=3
-" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
-"
-"
-let g:indent_guides_auto_colors = 1
-" let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#212121 ctermbg=1
-" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#404040 ctermbg=1
-let g:indent_guides_start_level = 1
-let g:indent_guides_guide_size = 1
-let g:indent_guides_enable_on_vim_startup = 1
+"let g:indent_guides_auto_colors = 1
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#212121 ctermbg=1
+"let g:indent_guides_start_level = 1
+"let g:indent_guides_guide_size = 1
+"let g:indent_guides_enable_on_vim_startup = 1
 
 " Reloading Your vimrc
 " http://usevim.com/2015/07/01/reloading-vimrc/
 " :source ~/.vimrc
 " :so ~/.vimrc
+
 
 
 
