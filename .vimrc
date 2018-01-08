@@ -52,12 +52,14 @@ Plugin 'widox/vim-buffer-explorer-plugin'
 Plugin 'fishman/ctags'
 Plugin 'myusuf3/numbers.vim'
 Plugin 'mvolkmann/vim-tag-comment'
+Plugin 'pangloss/vim-javascript'
+Plugin 'burnettk/vim-angular'
 
 " Plugin pro symfony 2
 Plugin 'docteurklein/vim-symfony'
 Plugin 'evidens/vim-twig'
-
-"tc :ElementComment
+call vundle#end()
+tc :ElementComment
 "tu :ElementUncomment
 "tC :TagComment
 "tU :TagUncomment
