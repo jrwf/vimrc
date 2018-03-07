@@ -21,7 +21,7 @@ Plugin 'gmarik/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
+"Plugin 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -30,39 +30,39 @@ Plugin 'tpope/vim-fugitive'
 " Plugin 'file:///home/gmarik/path/to/plugin'
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Avoid a name conflict with L9
 " Plugin 'user/L9', {'name': 'newL9'}
 
 
 " ------ Plugins -------------------------
-Bundle 'mattn/emmet-vim'
+"Bundle 'mattn/emmet-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mbbill/undotree'
 Plugin 'majutsushi/tagbar'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/neosnippet.vim'
 Plugin 'Shougo/neosnippet-snippets'
-Plugin 'Shougo/vimshell.vim'
-Plugin 'honza/vim-snippets'
+"Plugin 'Shougo/vimshell.vim'
+"Plugin 'honza/vim-snippets'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'bling/vim-bufferline'
 Plugin 'widox/vim-buffer-explorer-plugin'
-Plugin 'fishman/ctags'
+"Plugin 'fishman/ctags'
 Plugin 'myusuf3/numbers.vim'
 Plugin 'mvolkmann/vim-tag-comment'
-Plugin 'pangloss/vim-javascript'
-Plugin 'burnettk/vim-angular'
-Plugin 'groenewege/vim-less'
-Plugin 'hail2u/vim-css3-syntax'
+"Plugin 'pangloss/vim-javascript'
+"Plugin 'burnettk/vim-angular'
+"Plugin 'groenewege/vim-less'
+"Plugin 'hail2u/vim-css3-syntax'
 "Bundle 'nikvdp/ejs-syntax'
 "
 Plugin 'Janiczek/vim-latte'
 
 " Plugin pro symfony 2
-Plugin 'docteurklein/vim-symfony'
-Plugin 'evidens/vim-twig'
+"Plugin 'docteurklein/vim-symfony'
+"Plugin 'evidens/vim-twig'
 "call vundle#end()
 "tc :ElementComment
 "tu :ElementUncomment
@@ -106,32 +106,32 @@ Plugin 'bling/vim-airline'
 
 
 
-Plugin 'chrisgillis/vim-bootstrap3-snippets'
+"Plugin 'chrisgillis/vim-bootstrap3-snippets'
 
-Plugin 'nathanaelkane/vim-indent-guides'
+"Plugin 'nathanaelkane/vim-indent-guides'
 
 Plugin 'ap/vim-css-color'
 
 "Plugin 'vitalk/vim-simple-todo'
-Plugin 'freitass/todo.txt-vim'
+"Plugin 'freitass/todo.txt-vim'
 " Bundle 'git://drupalcode.org/project/vimrc.git', {'rtp': 'bundle/vim-plugin-for-drupal/'}
 " Plugin 'xolox/vim-misc'
 " Plugin 'xolox/vim-session'
-Plugin 'benjifisher/Vim-Plugin-for-Drupal'
+"Plugin 'benjifisher/Vim-Plugin-for-Drupal'
 " Bundle 'captbaritone/better-indent-support-for-php-with-html'
 " Plugin 'vim-scripts/php.vim-html-enhanced'
-Plugin 'spf13/PIV'
+"Plugin 'spf13/PIV'
 
-Plugin 'mhinz/vim-startify'
-Plugin 'Valloric/MatchTagAlways'
-Plugin 'kien/ctrlp.vim'
-Plugin 'mtscout6/vim-tagbar-css'
-Plugin 'othree/html5.vim'
+"Plugin 'mhinz/vim-startify'
+"Plugin 'Valloric/MatchTagAlways'
+"Plugin 'kien/ctrlp.vim'
+"Plugin 'mtscout6/vim-tagbar-css'
+"Plugin 'othree/html5.vim'
 
 " Display marks
 " https://github.com/kshenoy/vim-signature
 " delm! | delm A-Z0-9 - smazat vsechny znacky
-Plugin 'kshenoy/vim-signature'
+"Plugin 'kshenoy/vim-signature'
 "Plugin 'amiorin/vim-project'
 "
 Plugin 'jrwf/vim-woody'
