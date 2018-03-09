@@ -481,8 +481,8 @@ set wildmode=longest:full,full
 " Indentation settings for using 2 spaces instead of tabs.
 " Do not change 'tabstop' from its default value of 8 with this setup.
 " http://vim.wikia.com/wiki/Example_vimrc
-set shiftwidth=2
-set softtabstop=2
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 
 " Indentation settings for using hard tabs for indent. Display tabs as
@@ -494,7 +494,7 @@ set expandtab
 set number
 
 " number of visual spaces per TAB
-set tabstop=2
+set tabstop=4
 
 " highlight current line
 set cursorline
