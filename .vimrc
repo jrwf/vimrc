@@ -5,7 +5,26 @@
 " , + tt /tagbar
 " , + bb /buffer
 "
-
+" OPEN FILE UNDER CURSOR
+" http://vim.wikia.com/wiki/Open_file_under_cursor
+" gf - go to file, otevre soubor pod kurzorem
+" Ctrl-w f - open in a new window
+" Ctrl-w gf - open in a new tab
+" Ctrl-o - back
+"
+" GO TO DEFINITION USING G
+" http://vim.wikia.com/wiki/Go_to_definition_using_g
+" gd - will take you to the local declaration.
+" gD - will take you to the global declaration.
+" g* - search for the word under the cursor (like *, but g* on 'rain' will find words like 'rainbow').
+" g# - same as g* but in backward direction.
+" gg - goes to the first line in the buffer (or provide a count before the command for a specific line).
+" G - goes to the last line (or provide a count before the command for a specific line).
+"
+" BROWSING PROGRAMS WITH TAGS
+" http://vim.wikia.com/wiki/Browsing_programs_with_tags
+"
+"
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -54,7 +73,7 @@ Plugin 'myusuf3/numbers.vim'
 Plugin 'mvolkmann/vim-tag-comment'
 "Plugin 'pangloss/vim-javascript'
 "Plugin 'burnettk/vim-angular'
-"Plugin 'groenewege/vim-less'
+Plugin 'groenewege/vim-less'
 "Plugin 'hail2u/vim-css3-syntax'
 "Bundle 'nikvdp/ejs-syntax'
 "
