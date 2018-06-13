@@ -24,6 +24,12 @@
 " BROWSING PROGRAMS WITH TAGS
 " http://vim.wikia.com/wiki/Browsing_programs_with_tags
 "
+" Vyhledavani
+" http://vim.wikia.com/wiki/Find_in_files_within_Vim
+" :vimgrep /Plugin/gj ./vimrc/**/*
+"
+" http://vim.wikia.com/wiki/Search_and_replace_in_multiple_buffers
+"
 "
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -78,6 +84,8 @@ Plugin 'groenewege/vim-less'
 "Bundle 'nikvdp/ejs-syntax'
 "
 Plugin 'Janiczek/vim-latte'
+
+Plugin "joonty/vdebug"
 
 " Plugin pro symfony 2
 "Plugin 'docteurklein/vim-symfony'
