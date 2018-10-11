@@ -5,6 +5,55 @@
 " , + tt /tagbar
 " , + bb /buffer
 "
+" OPEN FILE UNDER CURSOR
+" ========================
+" http://vim.wikia.com/wiki/Open_file_under_cursor
+" gf - go to file, otevre soubor pod kurzorem
+" Ctrl-w f - open in a new window
+" Ctrl-w gf - open in a new tab
+" Ctrl-o - back
+"
+" GO TO DEFINITION USING G
+" ========================
+" http://vim.wikia.com/wiki/Go_to_definition_using_g
+" gd - will take you to the local declaration.
+" gD - will take you to the global declaration.
+" g* - search for the word under the cursor (like *, but g* on 'rain' will find words like 'rainbow').
+" g# - same as g* but in backward direction.
+" gg - goes to the first line in the buffer (or provide a count before the command for a specific line).
+" G - goes to the last line (or provide a count before the command for a specific line).
+"
+" BROWSING PROGRAMS WITH TAGS
+" ========================
+" http://vim.wikia.com/wiki/Browsing_programs_with_tags
+"
+" VYHLEDAVANI
+" ========================
+" http://vim.wikia.com/wiki/Find_in_files_within_Vim
+" :vimgrep /Plugin/gj ./vimrc/**/*
+"
+" http://vim.wikia.com/wiki/Search_and_replace_in_multiple_buffers
+"
+" FILES
+" ========================
+" Jak najit soubor v projektu
+" http://vim.wikia.com/wiki/Project_browsing_using_find
+set path=$PWD/**
+
+" FUGITIVE
+" ========================
+" 1. Make code changes
+" 2. :Gstatus
+" 3. go to first file in list
+" 4. type: -
+" 5. (do the patch add for that file)
+" 6. Find another file and repeat 4 and 5
+" 7. :Gcommit
+" 8. :GPush origin my-branch-name
+"
+" http://vimcasts.org/episodes/fugitive-vim-working-with-the-git-index/
+
+
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -21,7 +70,7 @@ Plugin 'gmarik/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-"Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -54,11 +103,13 @@ Plugin 'myusuf3/numbers.vim'
 Plugin 'mvolkmann/vim-tag-comment'
 "Plugin 'pangloss/vim-javascript'
 "Plugin 'burnettk/vim-angular'
-"Plugin 'groenewege/vim-less'
+Plugin 'groenewege/vim-less'
 "Plugin 'hail2u/vim-css3-syntax'
 "Bundle 'nikvdp/ejs-syntax'
 "
 Plugin 'Janiczek/vim-latte'
+
+Plugin "joonty/vdebug"
 
 " Plugin pro symfony 2
 "Plugin 'docteurklein/vim-symfony'
@@ -122,7 +173,7 @@ Plugin 'ap/vim-css-color'
 " Plugin 'vim-scripts/php.vim-html-enhanced'
 "Plugin 'spf13/PIV'
 
-"Plugin 'mhinz/vim-startify'
+Plugin 'mhinz/vim-startify'
 "Plugin 'Valloric/MatchTagAlways'
 "Plugin 'kien/ctrlp.vim'
 "Plugin 'mtscout6/vim-tagbar-css'
@@ -792,7 +843,6 @@ augroup END
 "highlight Comment ctermfg=green
 "highlight Comment ctermfg=Blue
 "set Comment ctermfg=green
-
 
 
 
