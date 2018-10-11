@@ -62,7 +62,7 @@ Plugin 'Janiczek/vim-latte'
 
 " Plugin pro symfony 2
 "Plugin 'docteurklein/vim-symfony'
-"Plugin 'evidens/vim-twig'
+Plugin 'evidens/vim-twig'
 "call vundle#end()
 "tc :ElementComment
 "tu :ElementUncomment
@@ -428,7 +428,7 @@ set autowrite
 " Tj. např. pokus.txt bude mít záložní souborpokus.txt~ atd.
 " http://www.root.cz/clanky/vim-na-plny-vykon-vimrc/
 set backup
-set backupdir=~/.vim/backup,.,~/
+set backupdir=~/.vim/backup,.,~/,~/tmp
 
 " Čárkami oddělený seznam adresářů, kam se mají ukládat dočasné soubory.
 " Pokud nelze dočasný soubor uložit do prvního adresáře v seznamu, použije se druhý v pořadí atd.
@@ -654,18 +654,19 @@ let g:neosnippet#snippets_directory='~/.vim/bundle/vim-woody'
 "let g:neosnippet#snippets_directory='~/.vim/bundle/vim-bootstrap3-snippets'
 "let g:mta_set_default_matchtag_color = 1" let g:neosnippet#snippets_directory='~/.vim/bundle/vimrc/bundle/vim-plugin-for-drupal/snipmate/drupal6'
 
-"if has("autocmd")
-  "augroup module
-    "autocmd BufRead,BufNewFile *.module set filetype=php
-    "autocmd BufRead,BufNewFile *.install set filetype=php
-    "autocmd BufRead,BufNewFile *.test set filetype=php
-    "autocmd BufRead,BufNewFile *.inc set filetype=php
-    "autocmd BufRead,BufNewFile *.profile set filetype=php
-    "autocmd BufRead,BufNewFile *.view set filetype=php
-    "autocmd BufRead,BufNewFile *.info set filetype=php
-  "augroup END
-"endif
-"syntax on
+if has("autocmd")
+  augroup module
+    autocmd BufRead,BufNewFile *.module set filetype=php
+    autocmd BufRead,BufNewFile *.theme set filetype=php
+    autocmd BufRead,BufNewFile *.install set filetype=php
+    autocmd BufRead,BufNewFile *.test set filetype=php
+    autocmd BufRead,BufNewFile *.inc set filetype=php
+    autocmd BufRead,BufNewFile *.profile set filetype=php
+    autocmd BufRead,BufNewFile *.view set filetype=php
+    autocmd BufRead,BufNewFile *.info set filetype=php
+  augroup END
+endif
+syntax on
 
 " Vyska radku.
 :set linespace=1
