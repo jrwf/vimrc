@@ -43,13 +43,15 @@ set path=$PWD/**
 " FUGITIVE
 " ========================
 " 1. Make code changes
-"2. :Gstatus
-"3. go to first file in list
-"4. type: -
-"5. (do the patch add for that file)
-"6. Find another file and repeat 4 and 5
-"7. :Gcommit
-"8. :GPush origin my-branch-name
+" 2. :Gstatus
+" 3. go to first file in list
+" 4. type: -
+" 5. (do the patch add for that file)
+" 6. Find another file and repeat 4 and 5
+" 7. :Gcommit
+" 8. :GPush origin my-branch-name
+"
+" http://vimcasts.org/episodes/fugitive-vim-working-with-the-git-index/
 
 
 
