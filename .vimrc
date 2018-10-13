@@ -1,5 +1,10 @@
 " git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 "
+" INSTALACE PLUGINU
+" ========================
+" PluginInstall
+" PluginInstall!
+"
 " , + b  /nerdtree
 " , + u  /historie
 " , + tt /tagbar
@@ -42,6 +47,8 @@ set path=$PWD/**
 
 " FUGITIVE
 " ========================
+" http://vimcasts.org/episodes/fugitive-vim-working-with-the-git-index/
+"
 " 1. Make code changes
 " 2. :Gstatus
 " 3. go to first file in list
@@ -51,8 +58,12 @@ set path=$PWD/**
 " 7. :Gcommit
 " 8. :GPush origin my-branch-name
 "
-" http://vimcasts.org/episodes/fugitive-vim-working-with-the-git-index/
 
+" MERGINAL
+" ========================
+" https://github.com/idanarye/vim-merginal/blob/develop/doc/merginal.txt
+"nnoremap <silent> <leader>Q :Merginal<CR>
+nnoremap <F2> :Merginal<CR>
 
 
 set nocompatible              " be iMproved, required
@@ -71,6 +82,7 @@ Plugin 'gmarik/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
+Plugin 'idanarye/vim-merginal'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -109,7 +121,7 @@ Plugin 'groenewege/vim-less'
 "
 Plugin 'Janiczek/vim-latte'
 
-Plugin "joonty/vdebug"
+"Plugin "joont
 
 " Plugin pro symfony 2
 "Plugin 'docteurklein/vim-symfony'
