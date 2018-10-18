@@ -57,6 +57,7 @@ set path=$PWD/**
 " 6. Find another file and repeat 4 and 5
 " 7. :Gcommit
 " 8. :GPush origin my-branch-name
+nnoremap <F8> :Gstatus<CR>
 "
 
 " MERGINAL
@@ -64,7 +65,6 @@ set path=$PWD/**
 " https://github.com/idanarye/vim-merginal/blob/develop/doc/merginal.txt
 "nnoremap <silent> <leader>Q :Merginal<CR>
 nnoremap <F2> :Merginal<CR>
-
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
