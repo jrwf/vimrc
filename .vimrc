@@ -27,6 +27,8 @@
 " g# - same as g* but in backward direction.
 " gg - goes to the first line in the buffer (or provide a count before the command for a specific line).
 " G - goes to the last line (or provide a count before the command for a specific line).
+"set tags=/var/www/html/tydeninovaci2019/tags;
+"set tags=./tags;
 "
 " BROWSING PROGRAMS WITH TAGS
 " ========================
@@ -45,6 +47,12 @@
 " http://vim.wikia.com/wiki/Project_browsing_using_find
 set path=$PWD/**
 
+" MERGINAL
+" ========================
+" https://github.com/idanarye/vim-merginal/blob/develop/doc/merginal.txt
+"nnoremap <silent> <leader>Q :Merginal<CR>
+nnoremap <F6> :Merginal<CR>
+
 " FUGITIVE
 " ========================
 " http://vimcasts.org/episodes/fugitive-vim-working-with-the-git-index/
@@ -57,14 +65,12 @@ set path=$PWD/**
 " 6. Find another file and repeat 4 and 5
 " 7. :Gcommit
 " 8. :GPush origin my-branch-name
-nnoremap <F8> :Gstatus<CR>
-"
+nnoremap <F7> :Gstatus<CR>
+nnoremap <F8> :Gcommit<CR>
 
-" MERGINAL
-" ========================
-" https://github.com/idanarye/vim-merginal/blob/develop/doc/merginal.txt
-"nnoremap <silent> <leader>Q :Merginal<CR>
-nnoremap <F2> :Merginal<CR>
+nnoremap <F9> <C-W><C-_>
+nnoremap <F10> <C-W><C-=>
+"
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -120,8 +126,12 @@ Plugin 'groenewege/vim-less'
 "Bundle 'nikvdp/ejs-syntax'
 "
 Plugin 'Janiczek/vim-latte'
+"Plugin 'fpob/nette.vim'
 
 "Plugin "joont
+"
+"Plugin 'xolox/vim-easytags'
+"Plugin 'xolox/vim-misc'
 
 " Plugin pro symfony 2
 "Plugin 'docteurklein/vim-symfony'
@@ -304,11 +314,6 @@ let g:nerdtree_tabs_open_on_gui_startup=0
 nnoremap <Leader>u :UndotreeToggle<CR>
 " If undotree is opened, it is likely one wants to interact with it.
 let g:undotree_SetFocusWhenToggle=1
-
-" ------ Tagbar
-nnoremap <silent> <leader>tt :TagbarToggle<CR>
-
-set tags='/user/bin/ctags'
 
 " ----- Neocomplete.vim
 " http://vim.wikia.com/wiki/Improve_completion_popup_menu
@@ -513,7 +518,7 @@ set confirm
 " Vhodnou volbou je například toto:
 " http://www.root.cz/clanky/vim-na-plny-vykon-vimrc/
 set viminfo='50,\"500
-set history=50
+set history=500
 " které zajistí, že se budou ukládat informace o posledních padesáti souborech,
 " obsahy registrů se budou uchovávat do velikosti 500 řádků a historie příkazů a vyhledávacích výrazů
 " bude omezena rovněž na 50. VIM by měl také umět automaticky skočit s kurzorem na místo, kde jsme minule skončili.
@@ -621,7 +626,7 @@ set smartcase
 set linebreak
 
 " Text zalamovat na 80. znaku.
-set textwidth=100
+set textwidth=0
 
 " Pouzivat automaticke odsazovani psaneho kodu.
 set autoindent
@@ -702,17 +707,42 @@ nnoremap <silent> <leader>b :BufExplorer<CR>
 "
 "CTAGS
 "
-let Tlist_Ctags_Cmd = "/usr/bin/ctags"
+"let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_WinWidth = 20
+
+" ------ Tagbar
+nnoremap <silent> <leader>tt :TagbarToggle<CR>
+
+set tags='/user/bin/ctags'
 
 "
 " add drupal tags
 "
-set tags+=~/.vim/bundle/vimrc/bundle/vim-plugin-for-drupal/tagfiles/drupal7.tags
+"set tags+=~/.vim/bundle/vimrc/bundle/vim-plugin-for-drupal/tagfiles/drupal7.tags
+"set tags=./tags
+"set tags=/var/www/html/tydeninovaci2019;
 
+" Ctags (patch): http://designtomarkup.com/vim/taglist-ctags-css-patch
+" Tagbar       : https://github.com/majutsushi/tagbar
+" Screenshot   : http://twitpic.com/7zq4d7
+ 
+"Tagbar
+"noremap <silent> <Leader>t :<C-u>TagbarToggle<CR>
+ 
+let g:tagbar_type_css = {
+\ 'ctagstype' : 'Css',
+    \ 'kinds'     : [
+        \ 'c:classes',
+        \ 's:selectors',
+        \ 'i:identities'
+    \ ]
+\ }
+
+" http://luxiyalu.com/vim-ctags-for-js-less/
 " Enable snipMate compatibility feature.
 "let g:neosnippet#enable_snipmate_compatibility = 1
 "let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+"
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-woody'
 "let g:neosnippet#snippets_directory='~/.vim/bundle/vim-bootstrap3-snippets'
 "let g:mta_set_default_matchtag_color = 1" let g:neosnippet#snippets_directory='~/.vim/bundle/vimrc/bundle/vim-plugin-for-drupal/snipmate/drupal6'
@@ -727,6 +757,8 @@ if has("autocmd")
     autocmd BufRead,BufNewFile *.profile set filetype=php
     autocmd BufRead,BufNewFile *.view set filetype=php
     autocmd BufRead,BufNewFile *.info set filetype=php
+    autocmd BufRead,BufNewFile *.info set filetype=php
+    autocmd BufRead,BufNewFile *.theme set filetype=php
   augroup END
 endif
 syntax on
@@ -786,25 +818,6 @@ imap <Leader>br border: 1px solid red;
 
 
 
-" Ctags (patch): http://designtomarkup.com/vim/taglist-ctags-css-patch
-" Tagbar       : https://github.com/majutsushi/tagbar
-" Screenshot   : http://twitpic.com/7zq4d7
- 
-"Tagbar
-"noremap <silent> <Leader>t :<C-u>TagbarToggle<CR>
- 
-let g:tagbar_type_css = {
-\ 'ctagstype' : 'Css',
-    \ 'kinds'     : [
-        \ 'c:classes',
-        \ 's:selectors',
-        \ 'i:identities'
-    \ ]
-\ }
-
-
-
-" http://luxiyalu.com/vim-ctags-for-js-less/
 
 function! JumpToCSS()
   let id_pos = searchpos("id", "nb", line('.'))[1]
