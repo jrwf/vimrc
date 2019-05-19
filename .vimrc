@@ -51,7 +51,7 @@ set path=$PWD/**
 " ========================
 " https://github.com/idanarye/vim-merginal/blob/develop/doc/merginal.txt
 "nnoremap <silent> <leader>Q :Merginal<CR>
-nnoremap <F6> :Merginal<CR>
+nnoremap <F1> :Merginal<CR>
 
 " FUGITIVE
 " ========================
@@ -65,11 +65,11 @@ nnoremap <F6> :Merginal<CR>
 " 6. Find another file and repeat 4 and 5
 " 7. :Gcommit
 " 8. :GPush origin my-branch-name
-nnoremap <F7> :Gstatus<CR>
-nnoremap <F8> :Gcommit<CR>
+nnoremap <F2> :Gstatus<CR>
+nnoremap <F3> :Gcommit<CR>
 
-nnoremap <F9> <C-W><C-_>
-nnoremap <F10> <C-W><C-=>
+"nnoremap <F4> <C-W><C-_>
+"nnoremap <F5> <C-W><C-=>
 "
 
 set nocompatible              " be iMproved, required
@@ -126,12 +126,17 @@ Plugin 'groenewege/vim-less'
 "Bundle 'nikvdp/ejs-syntax'
 "
 Plugin 'Janiczek/vim-latte'
-"Plugin 'fpob/nette.vim'
+Plugin 'fpob/nette.vim'
 
 "Plugin "joont
 "
-"Plugin 'xolox/vim-easytags'
-"Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-easytags'
+Plugin 'xolox/vim-misc'
+:set tags="~/tags"
+:let g:easytags_file = "~/.vim/tags"
+":set tags=./.tags;,~/.vimtags
+":let g:easytags_file = '~/.vim/tags'
+":let g:easytags_cmd = '/usr/bin/ctags'
 
 " Plugin pro symfony 2
 "Plugin 'docteurklein/vim-symfony'
@@ -141,6 +146,13 @@ Plugin 'evidens/vim-twig'
 "tu :ElementUncomment
 "tC :TagComment
 "tU :TagUncomment
+
+Plugin 'StanAngeloff/php.vim'
+
+Plugin 'vim-vdebug/vdebug'
+
+Plugin 'leafgarland/typescript-vim'
+
 nnoremap <silent> <leader>tc :ElementComment<CR>
 nnoremap <silent> <leader>tu :ElementUncomment<CR>
 nnoremap <silent> <leader>tC :TagComment<CR>
@@ -869,5 +881,7 @@ augroup END
 "highlight Comment ctermfg=Blue
 "set Comment ctermfg=green
 
+"set directory^=$HOME/.vim/tmp//
+"set directory^=$HOME/.vim/swap//
 
 
