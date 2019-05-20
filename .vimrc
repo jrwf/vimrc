@@ -51,7 +51,7 @@ set path=$PWD/**
 " ========================
 " https://github.com/idanarye/vim-merginal/blob/develop/doc/merginal.txt
 "nnoremap <silent> <leader>Q :Merginal<CR>
-nnoremap <F1> :Merginal<CR>
+"nnoremap <F1> :Merginal<CR>
 
 " FUGITIVE
 " ========================
@@ -65,8 +65,8 @@ nnoremap <F1> :Merginal<CR>
 " 6. Find another file and repeat 4 and 5
 " 7. :Gcommit
 " 8. :GPush origin my-branch-name
-nnoremap <F2> :Gstatus<CR>
-nnoremap <F3> :Gcommit<CR>
+nnoremap <F1> :Gstatus<CR>
+nnoremap <F8> :Gcommit<CR>
 
 "nnoremap <F4> <C-W><C-_>
 "nnoremap <F5> <C-W><C-=>
@@ -884,4 +884,20 @@ augroup END
 "set directory^=$HOME/.vim/tmp//
 "set directory^=$HOME/.vim/swap//
 
+let g:vdebug_options= {
+\    "port" : 9001,
+\    "server" : '',
+\    "timeout" : 20,
+\    "on_close" : 'detach',
+\    "break_on_open" : 0,
+\    "ide_key" : '',
+\    "path_maps" : {},
+\    "debug_window_level" : 0,
+\    "debug_file_level" : 0,
+\    "debug_file" : "",
+\    "watch_window_style" : 'expanded',
+\    "marker_default"     : '⬦',
+\    "marker_closed_tree" : '▸',
+\    "marker_open_tree" : '▾'
+\}
 
