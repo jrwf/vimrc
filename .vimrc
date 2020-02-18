@@ -30,6 +30,11 @@
 "set tags=/var/www/html/tydeninovaci2019/tags;
 "set tags=./tags;
 "
+" OPEN A URL FROM VIM
+" ========================
+" https://til.hashrocket.com/posts/69e7479ab9-open-a-url-from-vim
+" Place the cursor on the URL and type gx
+"
 " BROWSING PROGRAMS WITH TAGS
 " ========================
 " http://vim.wikia.com/wiki/Browsing_programs_with_tags
@@ -51,7 +56,8 @@ set path=$PWD/**
 " ========================
 " https://github.com/idanarye/vim-merginal/blob/develop/doc/merginal.txt
 "nnoremap <silent> <leader>Q :Merginal<CR>
-"nnoremap <F1> :Merginal<CR>
+nnoremap <F9> :Merginal<CR>
+let g:merginal_windowWidth=100
 
 " FUGITIVE
 " ========================
@@ -65,10 +71,19 @@ set path=$PWD/**
 " 6. Find another file and repeat 4 and 5
 " 7. :Gcommit
 " 8. :GPush origin my-branch-name
-nnoremap <F1> :Gstatus<CR>
-nnoremap <F8> :Gcommit<CR>
+nnoremap <F10> :Gstatus<CR>
+nnoremap <F11> :Gcommit<CR>
+nnoremap <F12> :Glog<CR>
+nnoremap <F5> :NumbersToggle<CR>
 
-"nnoremap <F4> <C-W><C-_>
+nnoremap <silent> <leader>tc :ElementComment<CR>
+nnoremap <silent> <leader>tu :ElementUncomment<CR>
+nnoremap <silent> <leader>tC :TagComment<CR>
+nnoremap <silent> <leader>tU :TagUncomment<CR>
+
+" nnoremap <F4> :NumbersOnOff<CR>
+
+"nnoremap <F4> :vimgrep /TODO/ ../dev-market/app/**/*<CR>
 "nnoremap <F5> <C-W><C-=>
 "
 
@@ -149,17 +164,9 @@ Plugin 'evidens/vim-twig'
 
 Plugin 'StanAngeloff/php.vim'
 
-Plugin 'vim-vdebug/vdebug'
+"Plugin 'vim-vdebug/vdebug'
 
 Plugin 'leafgarland/typescript-vim'
-
-nnoremap <silent> <leader>tc :ElementComment<CR>
-nnoremap <silent> <leader>tu :ElementUncomment<CR>
-nnoremap <silent> <leader>tC :TagComment<CR>
-nnoremap <silent> <leader>tU :TagUncomment<CR>
-
-nnoremap <F3> :NumbersToggle<CR>
-" nnoremap <F4> :NumbersOnOff<CR>
 
 Plugin 'scrooloose/syntastic'
 set statusline+=%#warningmsg#
@@ -310,6 +317,8 @@ let NERDTreeMouseMode=2
 let NERDTreeShowHidden=1
 let NERDTreeKeepTreeInNewTab=1
 let g:nerdtree_tabs_open_on_gui_startup=0
+"Sirka nerdtree
+let g:NERDTreeWinSize=60
 " bookmark se zobrazi uz pri otevreni vimu
 " autocmd StdinReadPre * let s:std_in=0
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -771,6 +780,7 @@ if has("autocmd")
     autocmd BufRead,BufNewFile *.info set filetype=php
     autocmd BufRead,BufNewFile *.info set filetype=php
     autocmd BufRead,BufNewFile *.theme set filetype=php
+    "autocmd BufRead,BufNewFile *.latte set filetype=php
   augroup END
 endif
 syntax on
@@ -884,20 +894,22 @@ augroup END
 "set directory^=$HOME/.vim/tmp//
 "set directory^=$HOME/.vim/swap//
 
-let g:vdebug_options= {
-\    "port" : 9001,
-\    "server" : '',
-\    "timeout" : 20,
-\    "on_close" : 'detach',
-\    "break_on_open" : 0,
-\    "ide_key" : '',
-\    "path_maps" : {},
-\    "debug_window_level" : 0,
-\    "debug_file_level" : 0,
-\    "debug_file" : "",
-\    "watch_window_style" : 'expanded',
-\    "marker_default"     : '⬦',
-\    "marker_closed_tree" : '▸',
-\    "marker_open_tree" : '▾'
-\}
+"let g:vdebug_options= {
+"\    "port" : 9001,
+"\    "server" : '',
+"\    "timeout" : 20,
+"\    "on_close" : 'detach',
+"\    "break_on_open" : 0,
+"\    "ide_key" : '',
+"\    "path_maps" : {},
+"\    "debug_window_level" : 0,
+"\    "debug_file_level" : 0,
+"\    "debug_file" : "",
+"\    "watch_window_style" : 'expanded',
+"\    "marker_default"     : '⬦',
+"\    "marker_closed_tree" : '▸',
+"\    "marker_open_tree" : '▾'
+"\}
+
+
 
