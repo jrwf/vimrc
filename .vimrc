@@ -120,6 +120,20 @@ Plugin 'idanarye/vim-merginal'
 " ------ Plugins -------------------------
 "Bundle 'mattn/emmet-vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹ M",
+    \ "Staged"    : "✚ S",
+    \ "Untracked" : "✭ Unt",
+    \ "Renamed"   : "➜ R",
+    \ "Unmerged"  : "═ Unm",
+    \ "Deleted"   : "✖ De",
+    \ "Dirty"     : "✗ Di",
+    \ "Clean"     : "✔︎ Cl",
+    \ 'Ignored'   : '☒ Ig',
+    \ "Unknown"   : "? Un"
+    \ }
+
 Plugin 'mbbill/undotree'
 Plugin 'majutsushi/tagbar'
 Plugin 'Shougo/neocomplete.vim'
@@ -309,6 +323,7 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 map <leader>e :NERDTreeToggle<CR>:NERDTreeMirror<CR>
 map <C-e> :NERDTreeFind<CR>
 nmap <leader>nt :NERDTreeFind<CR>
+let g:nerdtree_tabs_open_on_gui_startup=1
 let NERDTreeShowBookmarks=0
 let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
 let NERDTreeChDirMode=0
@@ -588,8 +603,18 @@ set tabstop=4
 " highlight current line
 set cursorline
 
+"Foldy
+"
 " enable folding
 set foldenable
+
+"Ulozeni foldu
+"https://stackoverflow.com/questions/37552913/vim-how-to-keep-folds-on-save
+augroup remember_folds
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent! loadview
+augroup END
 
 " leader is comma
 let mapleader=","
@@ -911,5 +936,27 @@ augroup END
 "\    "marker_open_tree" : '▾'
 "\}
 
+
+"Nastaveni okna na fullscreen
+"https://vim.fandom.com/wiki/Maximize_or_set_initial_window_size
+"
+if has("gui_running")
+  " GUI is running or is about to start.
+  " Maximize gvim window (for an alternative on Windows, see simalt below).
+  set lines=999 columns=999
+else
+  " This is console Vim.
+  if exists("+lines")
+    set lines=60
+  endif
+  if exists("+columns")
+    set columns=180
+  endif
+endif
+
+"or
+"
+"https://superuser.com/questions/264693/how-can-i-open-gvim-in-full-screen-mode-in-gnome
+"autocmd GUIEnter * call system("wmctrl -ir " . v:windowid . " -b add,fullscreen")
 
 
