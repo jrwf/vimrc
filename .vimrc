@@ -5,7 +5,7 @@
 " PluginInstall
 " PluginInstall!
 "
-" , + b  /nerdtree
+" , + e  /nerdtree
 " , + u  /historie
 " , + tt /tagbar
 " , + bb /buffer
@@ -56,7 +56,6 @@ set path=$PWD/**
 " ========================
 " https://github.com/idanarye/vim-merginal/blob/develop/doc/merginal.txt
 "nnoremap <silent> <leader>Q :Merginal<CR>
-nnoremap <F9> :Merginal<CR>
 let g:merginal_windowWidth=100
 
 " FUGITIVE
@@ -71,6 +70,7 @@ let g:merginal_windowWidth=100
 " 6. Find another file and repeat 4 and 5
 " 7. :Gcommit
 " 8. :GPush origin my-branch-name
+nnoremap <F9> :Merginal<CR>
 nnoremap <F10> :Gstatus<CR>
 nnoremap <F11> :Gcommit<CR>
 nnoremap <F12> :Glog<CR>
@@ -122,16 +122,16 @@ Plugin 'idanarye/vim-merginal'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "✹ M",
-    \ "Staged"    : "✚ S",
-    \ "Untracked" : "✭ Unt",
-    \ "Renamed"   : "➜ R",
-    \ "Unmerged"  : "═ Unm",
-    \ "Deleted"   : "✖ De",
-    \ "Dirty"     : "✗ Di",
-    \ "Clean"     : "✔︎ Cl",
-    \ 'Ignored'   : '☒ Ig',
-    \ "Unknown"   : "? Un"
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
     \ }
 
 Plugin 'mbbill/undotree'
@@ -214,7 +214,7 @@ Plugin 'bling/vim-airline'
 
 "Plugin 'chrisgillis/vim-bootstrap3-snippets'
 
-"Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 Plugin 'ap/vim-css-color'
 
@@ -335,8 +335,8 @@ let g:nerdtree_tabs_open_on_gui_startup=0
 "Sirka nerdtree
 let g:NERDTreeWinSize=60
 " bookmark se zobrazi uz pri otevreni vimu
-" autocmd StdinReadPre * let s:std_in=0
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+ autocmd StdinReadPre * let s:std_in=0
+ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 "autocmd VimEnter *
                 "\   if !argc()
@@ -426,7 +426,8 @@ inoremap <expr><C-e>  neocomplete#cancel_popup()
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType less setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType sass setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown,latte setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
@@ -642,6 +643,15 @@ set lines=58
 set columns=175
 "highlight Comment ctermfg=green
 "set Comment guifg=#536896
+"
+
+highlight Comment   guifg=#F8F8F0
+"hi Comment         guifg=#15a25e
+"hi Comment         guifg=#109454
+"hi Comment  guifg=#80a0ff ctermfg=darkred
+
+
+
 
 set ruler
 
@@ -805,7 +815,7 @@ if has("autocmd")
     autocmd BufRead,BufNewFile *.info set filetype=php
     autocmd BufRead,BufNewFile *.info set filetype=php
     autocmd BufRead,BufNewFile *.theme set filetype=php
-    "autocmd BufRead,BufNewFile *.latte set filetype=php
+    "autocmd BufRead,BufNewFile *.latte set filetype=html
   augroup END
 endif
 syntax on
@@ -884,11 +894,11 @@ nnoremap <leader>] :call JumpToCSS()<CR>zz
 
 
 
-"let g:indent_guides_auto_colors = 1
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#212121 ctermbg=1
-"let g:indent_guides_start_level = 1
-"let g:indent_guides_guide_size = 1
-"let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#212121 ctermbg=1
+let g:indent_guides_start_level = 1
+let g:indent_guides_guide_size = 1
+let g:indent_guides_enable_on_vim_startup = 1
 
 " Reloading Your vimrc
 " http://usevim.com/2015/07/01/reloading-vimrc/
